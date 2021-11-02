@@ -25,8 +25,8 @@ private val isNode: Boolean
     get() = js("typeof process !== 'undefined' && process.versions != null && process.versions.node != null") as Boolean
 
 private fun detectNodeEnviroment(): UnifiedPlatform.JavaScript {
-    val os = js("require('os')")
-    val process = js("require('process')")
+    val os = js("eval('require')('os')")
+    val process = js("eval('require')('process')")
     val platform = os.platform() as String
 
     return UnifiedPlatform.JavaScript(
