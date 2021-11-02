@@ -5,11 +5,10 @@ plugins {
 }
 
 group = "com.github.adriantodt"
-version = "1.0"
+version = "1.1"
 
 repositories {
     mavenCentral()
-    jcenter()
 }
 
 kotlin {
@@ -50,7 +49,6 @@ kotlin {
         val jvmTest by getting
         val jsMain by getting {
             dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-nodejs:0.0.7")
                 implementation(npm("bowser", "2.11.0", generateExternals = true))
             }
         }
