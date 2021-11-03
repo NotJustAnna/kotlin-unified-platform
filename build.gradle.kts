@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.github.adriantodt"
-version = "1.1.1"
+version = "1.2"
 
 repositories {
     mavenCentral()
@@ -24,16 +24,11 @@ kotlin {
         browser()
         nodejs()
     }
-    val hostOs = System.getProperty("os.name")
-    val isMingwX64 = hostOs.startsWith("Windows")
-    val nativeTarget = when {
-        hostOs == "Mac OS X" -> macosX64("native")
-        hostOs == "Linux" -> linuxX64("native")
-        isMingwX64 -> mingwX64("native")
-        else -> throw GradleException("Host OS is not supported in Kotlin/Native.")
-    }
 
-    
+    linuxX64("linuxX64")
+    macosX64("macosX64")
+    mingwX64("mingwX64")
+
     sourceSets {
         val commonMain by getting
         val commonTest by getting {
@@ -52,9 +47,30 @@ kotlin {
                 implementation(npm("bowser", "2.11.0", generateExternals = true))
             }
         }
-        val jsTest by getting
-        val nativeMain by getting
-        val nativeTest by getting
+        val nativeMain by creating {
+            dependsOn(commonMain)
+        }
+        val nativeTest by creating {
+            dependsOn(nativeMain)
+        }
+        val linuxX64Main by getting {
+            dependsOn(nativeMain)
+        }
+        val linuxX64Test by getting {
+            dependsOn(nativeTest)
+        }
+        val mingwX64Main by getting {
+            dependsOn(nativeMain)
+        }
+        val mingwX64Test by getting {
+            dependsOn(nativeTest)
+        }
+        val macosX64Main by getting {
+            dependsOn(nativeMain)
+        }
+        val macosX64Test by getting {
+            dependsOn(nativeTest)
+        }
     }
 }
 
