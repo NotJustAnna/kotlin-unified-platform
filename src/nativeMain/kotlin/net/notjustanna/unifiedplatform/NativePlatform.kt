@@ -5,9 +5,8 @@ import kotlin.native.Platform.osFamily
 import kotlin.native.CpuArchitecture as NativeCpuArchitecture
 import kotlin.native.OsFamily as NativeOsFamily
 
-actual val currentPlatform: UnifiedPlatform = UnifiedPlatform.Native(
-    osFamily.toUnified(), cpuArchitecture.toUnified()
-)
+actual val currentPlatform: UnifiedPlatform
+    get() = UnifiedPlatform.Native(osFamily.toUnified(), cpuArchitecture.toUnified())
 
 private fun NativeOsFamily.toUnified(): OsFamily {
     return when (this) {
