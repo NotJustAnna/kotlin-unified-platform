@@ -1,11 +1,11 @@
 plugins {
     kotlin("multiplatform") version "1.5.31"
     `maven-publish`
-    id("org.jetbrains.dokka") version "1.5.0"
+    id("org.jetbrains.dokka") version "1.5.31"
 }
 
 group = "com.github.adriantodt"
-version = "1.2"
+version = "1.3"
 
 repositories {
     mavenCentral()
@@ -20,14 +20,15 @@ kotlin {
             useJUnit()
         }
     }
-    js(IR) {
+    js(BOTH) {
         browser()
         nodejs()
     }
-
-    linuxX64("linuxX64")
-    macosX64("macosX64")
-    mingwX64("mingwX64")
+    linuxX64()
+    linuxArm64()
+    macosX64()
+    macosArm64()
+    mingwX64()
 
     sourceSets {
         val commonMain by getting
@@ -59,6 +60,12 @@ kotlin {
         val linuxX64Test by getting {
             dependsOn(nativeTest)
         }
+        val linuxArm64Main by getting {
+            dependsOn(nativeMain)
+        }
+        val linuxArm64Test by getting {
+            dependsOn(nativeTest)
+        }
         val mingwX64Main by getting {
             dependsOn(nativeMain)
         }
@@ -69,6 +76,12 @@ kotlin {
             dependsOn(nativeMain)
         }
         val macosX64Test by getting {
+            dependsOn(nativeTest)
+        }
+        val macosArm64Main by getting {
+            dependsOn(nativeMain)
+        }
+        val macosArm64Test by getting {
             dependsOn(nativeTest)
         }
     }
@@ -82,6 +95,7 @@ tasks {
         archiveClassifier.set("javadoc")
     }
 }
+
 publishing {
     publications.withType<MavenPublication> {
         artifact(tasks["dokkaJar"])
