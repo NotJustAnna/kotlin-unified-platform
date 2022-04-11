@@ -45,7 +45,7 @@ jobs:
         run: ./gradlew --stop
       - name: capture build artifacts
         if: ${{ matrix.java == '16' }} # Only upload artifacts built from latest java on one OS
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: Artifacts
           path: build/libs/
