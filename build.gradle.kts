@@ -39,7 +39,7 @@ kotlin {
         }
         val jvmMain by getting {
             dependencies {
-                implementation("org.apache.commons:commons-lang3:3.12.0")
+                implementation("org.apache.commons:commons-lang3:3.13.0")
             }
         }
         val jvmTest by getting
