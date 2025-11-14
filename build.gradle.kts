@@ -45,7 +45,7 @@ kotlin {
         val jvmTest by getting
         val jsMain by getting {
             dependencies {
-                implementation(npm("bowser", "2.11.0", generateExternals = true))
+                implementation(npm("bowser", "2.11.0"))
             }
         }
         val nativeMain by creating {
