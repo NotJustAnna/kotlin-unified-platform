@@ -6,6 +6,7 @@ import kotlin.native.Platform.osFamily
 import kotlin.native.CpuArchitecture as NativeCpuArchitecture
 import kotlin.native.OsFamily as NativeOsFamily
 
+@OptIn(ExperimentalNativeApi::class)
 actual val currentPlatform: UnifiedPlatform
     get() = UnifiedPlatform.Native(osFamily.toUnified(), cpuArchitecture.toUnified())
 
