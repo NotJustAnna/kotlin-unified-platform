@@ -1,5 +1,6 @@
 package net.notjustanna.unifiedplatform
 
+import kotlin.experimental.ExperimentalNativeApi
 import kotlin.native.Platform.cpuArchitecture
 import kotlin.native.Platform.osFamily
 import kotlin.native.CpuArchitecture as NativeCpuArchitecture
@@ -8,6 +9,7 @@ import kotlin.native.OsFamily as NativeOsFamily
 actual val currentPlatform: UnifiedPlatform
     get() = UnifiedPlatform.Native(osFamily.toUnified(), cpuArchitecture.toUnified())
 
+@OptIn(ExperimentalNativeApi::class)
 private fun NativeOsFamily.toUnified(): OsFamily {
     return when (this) {
         NativeOsFamily.UNKNOWN -> OsFamily.UNKNOWN
@@ -22,6 +24,7 @@ private fun NativeOsFamily.toUnified(): OsFamily {
     }
 }
 
+@OptIn(ExperimentalNativeApi::class)
 private fun NativeCpuArchitecture.toUnified(): CpuArchitecture {
     return when (this) {
         NativeCpuArchitecture.UNKNOWN -> CpuArchitecture.UNKNOWN
