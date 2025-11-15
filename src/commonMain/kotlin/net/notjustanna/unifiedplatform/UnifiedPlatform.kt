@@ -20,4 +20,15 @@ sealed class UnifiedPlatform {
             return "[js, $environment]"
         }
     }
+
+    data class WebAssembly(val target: WasmTarget) : UnifiedPlatform() {
+        override fun toString(): String {
+            return "[wasm, ${target.name.lowercase()}]"
+        }
+    }
+}
+
+enum class WasmTarget {
+    JS,
+    WASI
 }
