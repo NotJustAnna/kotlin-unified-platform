@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "net.notjustanna"
-version = "1.3"
+version = "2.0"
 
 repositories {
     mavenCentral()
