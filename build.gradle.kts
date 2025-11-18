@@ -219,19 +219,10 @@ publishing {
     publications.withType<MavenPublication> {
         artifact(tasks["dokkaJar"])
     }
-    // select the repositories you want to publish to
     repositories {
         maven {
-            url = uri("https://maven.cafeteria.dev/releases")
-
-            credentials {
-                username = "${project.findProperty("mcdUsername") ?: System.getenv("MCD_USERNAME")}"
-                password = "${project.findProperty("mcdPassword") ?: System.getenv("MCD_PASSWORD")}"
-            }
-            authentication {
-                create("basic", BasicAuthentication::class.java)
-            }
+            name = "local"
+            url = uri("${project.rootDir}/.repo")
         }
-        mavenLocal()
     }
 }
