@@ -208,9 +208,10 @@ kotlin {
 
 
 tasks {
+    val dokkaGeneratePublicationHtml by getting
     register<Jar>("dokkaJar") {
-        from(dokkaHtml)
-        dependsOn(dokkaHtml)
+        from(dokkaGeneratePublicationHtml)
+        dependsOn(dokkaGeneratePublicationHtml)
         archiveClassifier.set("javadoc")
     }
 }
