@@ -1,3 +1,7 @@
+@file:OptIn(ExperimentalWasmDsl::class)
+
+import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
+
 plugins {
     kotlin("multiplatform") version "2.2.20"
     `maven-publish`
@@ -61,8 +65,10 @@ kotlin {
     tvosX64()
     tvosSimulatorArm64()
 
+    // Apply the default native source-set hierarchy instead of configuring it manually
+    applyDefaultHierarchyTemplate()
+
     sourceSets {
-        val commonMain by getting
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
@@ -73,144 +79,20 @@ kotlin {
                 implementation("org.apache.commons:commons-lang3:3.12.0")
             }
         }
-        val jvmTest by getting
         val jsMain by getting {
             dependencies {
                 implementation(npm("bowser", "2.11.0"))
             }
-        }
-
-        // WebAssembly source sets
-        val wasmJsMain by getting {
-            dependsOn(commonMain)
-        }
-        val wasmWasiMain by getting {
-            dependsOn(commonMain)
-        }
-
-        // Native source sets hierarchy
-        val nativeMain by creating {
-            dependsOn(commonMain)
-        }
-        val nativeTest by creating {
-            dependsOn(nativeMain)
-        }
-
-        // Linux targets
-        val linuxX64Main by getting {
-            dependsOn(nativeMain)
-        }
-        val linuxX64Test by getting {
-            dependsOn(nativeTest)
-        }
-        val linuxArm64Main by getting {
-            dependsOn(nativeMain)
-        }
-        val linuxArm64Test by getting {
-            dependsOn(nativeTest)
-        }
-
-        // macOS targets
-        val macosX64Main by getting {
-            dependsOn(nativeMain)
-        }
-        val macosX64Test by getting {
-            dependsOn(nativeTest)
-        }
-        val macosArm64Main by getting {
-            dependsOn(nativeMain)
-        }
-        val macosArm64Test by getting {
-            dependsOn(nativeTest)
-        }
-
-        // Windows targets
-        val mingwX64Main by getting {
-            dependsOn(nativeMain)
-        }
-        val mingwX64Test by getting {
-            dependsOn(nativeTest)
-        }
-
-        // iOS targets
-        val iosArm64Main by getting {
-            dependsOn(nativeMain)
-        }
-        val iosArm64Test by getting {
-            dependsOn(nativeTest)
-        }
-        val iosX64Main by getting {
-            dependsOn(nativeMain)
-        }
-        val iosX64Test by getting {
-            dependsOn(nativeTest)
-        }
-        val iosSimulatorArm64Main by getting {
-            dependsOn(nativeMain)
-        }
-        val iosSimulatorArm64Test by getting {
-            dependsOn(nativeTest)
-        }
-
-        // watchOS targets
-        val watchosArm32Main by getting {
-            dependsOn(nativeMain)
-        }
-        val watchosArm32Test by getting {
-            dependsOn(nativeTest)
-        }
-        val watchosArm64Main by getting {
-            dependsOn(nativeMain)
-        }
-        val watchosArm64Test by getting {
-            dependsOn(nativeTest)
-        }
-        val watchosX64Main by getting {
-            dependsOn(nativeMain)
-        }
-        val watchosX64Test by getting {
-            dependsOn(nativeTest)
-        }
-        val watchosSimulatorArm64Main by getting {
-            dependsOn(nativeMain)
-        }
-        val watchosSimulatorArm64Test by getting {
-            dependsOn(nativeTest)
-        }
-        val watchosDeviceArm64Main by getting {
-            dependsOn(nativeMain)
-        }
-        val watchosDeviceArm64Test by getting {
-            dependsOn(nativeTest)
-        }
-
-        // tvOS targets
-        val tvosArm64Main by getting {
-            dependsOn(nativeMain)
-        }
-        val tvosArm64Test by getting {
-            dependsOn(nativeTest)
-        }
-        val tvosX64Main by getting {
-            dependsOn(nativeMain)
-        }
-        val tvosX64Test by getting {
-            dependsOn(nativeTest)
-        }
-        val tvosSimulatorArm64Main by getting {
-            dependsOn(nativeMain)
-        }
-        val tvosSimulatorArm64Test by getting {
-            dependsOn(nativeTest)
         }
     }
 }
 
 
 tasks {
+    val dokkaGeneratePublicationHtml by getting
     register<Jar>("dokkaJar") {
-        from(dokkaHtml)
-        dependsOn(dokkaHtml)
+        from(dokkaGeneratePublicationHtml)
+        dependsOn(dokkaGeneratePublicationHtml)
         archiveClassifier.set("javadoc")
     }
 }
