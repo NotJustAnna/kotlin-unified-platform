@@ -1,0 +1,104 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlin-unified-platform/2.0/kotlin-unified-platform-2.0.module",
+    "group": "net.notjustanna",
+    "module": "kotlin-unified-platform",
+    "version": "2.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.11.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "tvosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlin-unified-platform-tvosArm64Main-2.0.klib",
+          "url": "kotlin-unified-platform-tvosarm64-2.0.klib",
+          "size": 27393,
+          "sha512": "addc78804621bb6dac86beed285833e9d0c492a5625ec2955926d918ea063916c0052d89421191b8180f6e367ef4accd663d988bfb5227dcff0a880195c075b0",
+          "sha256": "5310b3d5f959afae1f68a3c67b87331e6b9339f5f5c4e0b18fce8e4216ab6e3e",
+          "sha1": "83a30bab89595e2f3c4427989be1669c9a89f5bf",
+          "md5": "d827a59fb6565f39e1dcd72b503e8331"
+        }
+      ]
+    },
+    {
+      "name": "tvosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlin-unified-platform-tvosarm64-2.0-sources.jar",
+          "url": "kotlin-unified-platform-tvosarm64-2.0-sources.jar",
+          "size": 5894,
+          "sha512": "dc837c699729c0c010af40c0f83d9ab68a432ba6d6090b6dad5251f87e959f5f0f3abbf51daf9381f09dbae9c9ae588901a94312da6189ec147a57e9972d6e3a",
+          "sha256": "a0cd8d290c146a58c317c815689c5a6e8ca195a83620de4a7a4c8bf5cb058819",
+          "sha1": "2870986fa3c746d4b2b1d20523c066af0856bf15",
+          "md5": "fecc4ff3e72a5641546fe2fb98e778f9"
+        }
+      ]
+    },
+    {
+      "name": "tvosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlin-unified-platform-tvosarm64-2.0-metadata.jar",
+          "url": "kotlin-unified-platform-tvosarm64-2.0-metadata.jar",
+          "size": 261,
+          "sha512": "2206c4e19266ed2ee823a3af6c2de0c32bbf798ac5ec63be701ab77e32849e487dde73fc48cd3bb6f665a4cec4cbb00018ea199d79453be41ed3e5f1d78c7b1c",
+          "sha256": "c231cf34c6ee89ac15c8a1c4d1ba8e416475a68f2f86df9e78cb197202d6755e",
+          "sha1": "02513aaa75f32e1c1e9d63451319880a9b049c17",
+          "md5": "c407fff77e268f17c97f8e278244e3ea"
+        }
+      ]
+    }
+  ]
+}

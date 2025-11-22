@@ -1,0 +1,73 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlin-unified-platform/2.0/kotlin-unified-platform-2.0.module",
+    "group": "net.notjustanna",
+    "module": "kotlin-unified-platform",
+    "version": "2.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.11.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "linuxX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "linux_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlin-unified-platform-linuxX64Main-2.0.klib",
+          "url": "kotlin-unified-platform-linuxx64-2.0.klib",
+          "size": 27387,
+          "sha512": "a627721dd398788abde4b88eb1ba342a6177b2737b37f5a0fea124a40adc3ad238e79e86fac3779002f23039f070c9a3e3396d7a4b1b9f1005690731bd464191",
+          "sha256": "a5cb3815b0e43d812d269f05e9733d65124f1dde77f90130ad2fcf4a0c8f0d1e",
+          "sha1": "1feef6b0cdb9c3f8ccea50f1a984ad27d044b8c0",
+          "md5": "684de70f57c5bcca89559802c6c92378"
+        }
+      ]
+    },
+    {
+      "name": "linuxX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "linux_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlin-unified-platform-linuxx64-2.0-sources.jar",
+          "url": "kotlin-unified-platform-linuxx64-2.0-sources.jar",
+          "size": 5894,
+          "sha512": "dc837c699729c0c010af40c0f83d9ab68a432ba6d6090b6dad5251f87e959f5f0f3abbf51daf9381f09dbae9c9ae588901a94312da6189ec147a57e9972d6e3a",
+          "sha256": "a0cd8d290c146a58c317c815689c5a6e8ca195a83620de4a7a4c8bf5cb058819",
+          "sha1": "2870986fa3c746d4b2b1d20523c066af0856bf15",
+          "md5": "fecc4ff3e72a5641546fe2fb98e778f9"
+        }
+      ]
+    }
+  ]
+}

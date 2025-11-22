@@ -1,0 +1,109 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlin-unified-platform/2.0/kotlin-unified-platform-2.0.module",
+    "group": "net.notjustanna",
+    "module": "kotlin-unified-platform",
+    "version": "2.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.11.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlin-unified-platform-jvm-2.0.jar",
+          "url": "kotlin-unified-platform-jvm-2.0.jar",
+          "size": 30184,
+          "sha512": "c33bfad9e4b0d0536ec5a2d90df8a7a38bae42fbc040be9f4ce19bda6a4396001b6e4fde348062960e7c9f2c53839474b54c8913e9bbeb89ccf9ba1acf1ffa6a",
+          "sha256": "a4c20e74b1154f613d9eae9da9a7e81092ccc2c49d047809bf89a6910f5df1da",
+          "sha1": "edaf5c8192a32b8cac0eca15430fecc483f1cf07",
+          "md5": "803cb1969ab8a57949b18394e0681a03"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        },
+        {
+          "group": "org.apache.commons",
+          "module": "commons-lang3",
+          "version": {
+            "requires": "3.12.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlin-unified-platform-jvm-2.0.jar",
+          "url": "kotlin-unified-platform-jvm-2.0.jar",
+          "size": 30184,
+          "sha512": "c33bfad9e4b0d0536ec5a2d90df8a7a38bae42fbc040be9f4ce19bda6a4396001b6e4fde348062960e7c9f2c53839474b54c8913e9bbeb89ccf9ba1acf1ffa6a",
+          "sha256": "a4c20e74b1154f613d9eae9da9a7e81092ccc2c49d047809bf89a6910f5df1da",
+          "sha1": "edaf5c8192a32b8cac0eca15430fecc483f1cf07",
+          "md5": "803cb1969ab8a57949b18394e0681a03"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "kotlin-unified-platform-jvm-2.0-sources.jar",
+          "url": "kotlin-unified-platform-jvm-2.0-sources.jar",
+          "size": 5963,
+          "sha512": "715fc4f3d7ed2d334bcb630fc820ba65bc040745abc8542fcdd68fdcbc07853b4a2c012ac3aa2d17b572244b6fa66fb6b00a579a281e135a621b81935bc51e13",
+          "sha256": "b1c70aced70d788e0e6a2727ae08999e3ca665f234aed6e594e7f5a4cf6d6247",
+          "sha1": "94d4e3265fe1b1fc3dc4b9db5c8118ece2cd5f20",
+          "md5": "ee1577611652212eab993b284ba7b0a6"
+        }
+      ]
+    }
+  ]
+}
