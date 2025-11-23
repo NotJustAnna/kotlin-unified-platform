@@ -76,7 +76,7 @@ kotlin {
         }
         val jvmMain by getting {
             dependencies {
-                implementation("org.apache.commons:commons-lang3:3.12.0")
+                implementation("org.apache.commons:commons-lang3:3.20.0")
             }
         }
         val jsMain by getting {
